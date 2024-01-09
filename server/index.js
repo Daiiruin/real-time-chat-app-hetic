@@ -1,3 +1,4 @@
+// =================== MONGODB ===================
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -8,8 +9,10 @@ const jwt = require('jsonwebtoken');
 const app = express();
 app.use(express.json());
 app.use(cors());
+// =================== MONGODB ===================
 
-mongoose.connect('mongodb://127.0.0.1:27017/lr-mongo');
+// =================== MONGODB ===================
+mongoose.connect('mongodb://127.0.0.1:27017/realtimechatapphetic');
 
 app.post("/register", (req, res) => {
   UserModel.create(req.body)
@@ -55,7 +58,6 @@ app.get("/user", verifyToken, (req, res) => {
       res.json({
         name: user.name,
         email: user.email,
-        // Add other details as needed
       });
     })
     .catch(err => res.json(err));
@@ -64,3 +66,4 @@ app.get("/user", verifyToken, (req, res) => {
 app.listen(5000, () => {
   console.log('Server has started!');
 });
+// =================== MONGODB ===================
