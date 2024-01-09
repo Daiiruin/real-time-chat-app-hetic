@@ -1,0 +1,45 @@
+header {
+  width: 90vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5vw;
+  border-bottom: 1px solid black;
+}
+
+header button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+header button:hover {
+  background-color: rgb(89, 247, 41);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInfo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgb(89, 247, 41);
+  padding: 3px;
+  margin-right: 15px;
+}
+
+.userInfo p {
+  font-size: 18px;
+}
