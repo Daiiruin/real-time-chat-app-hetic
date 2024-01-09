@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Home } from "./pages/Home";
-import { LoginPage } from "./pages/LoginPage";
+import { Home } from "./pages/HomePage/Home";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { ProtectedRoute } from "./pages/ProtectedRoute/ProtectedRoute";
-import { SignupPage } from "./pages/SignupPage";
+import { SignupPage } from "./pages/SignupPage/SignupPage";
 
 export const App = () => {
   return (
