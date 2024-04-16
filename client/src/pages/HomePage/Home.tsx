@@ -39,10 +39,15 @@ export const Home = () => {
     client.onopen = () => {
       console.log("WebSocket Client Connected");
     };
+
+    // Message reçu par le client WebSocket => appel la fonction
     client.onmessage = (message) => {
       const dataFromServer = JSON.parse(message.data);
+      // On affiche dans la console un message indiquant la réception d'un message du serveur.
       console.log("Got reply !", dataFromServer);
+
       if (dataFromServer.type === "message") {
+        // MAJ état des messages en ajoutant le nouveau msg au tableau éxistant.
         setMessages((currentMessages) => [
           ...currentMessages,
           {
@@ -55,6 +60,7 @@ export const Home = () => {
   }, []);
 
   const onButtonClicked = () => {
+    // Message n'est pas vide ?
     if (inputMessage.trim() !== "") {
       client.send(
         JSON.stringify({
